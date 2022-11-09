@@ -1,6 +1,5 @@
 import React from 'react';
 import './ArticleCard';
-import { Link } from 'react-router-dom'
 
 const ArticleCard = ({ title, abstract, url }) => {
     return (

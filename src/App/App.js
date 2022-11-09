@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { getSection } from '../apiCalls';
 import SearchForm from '../SearchForm/SearchForm';
 import Article from '../Article/Article';
+// import Header from '../Header/Header';
 
 function App() {
   const [articles, setArticles] = useState([])
