@@ -1,6 +1,6 @@
 import '../App/App.css';
 import React, { useEffect, useState } from 'react';
-import { getData } from '../apiCalls';
+import { getSection } from '../apiCalls';
 import SearchForm from '../SearchForm/SearchForm';
 import Article from '../Article/Article';
 
@@ -8,8 +8,7 @@ function App() {
   const [articles, setArticles] = useState([])
 
   useEffect(() => {
-    getData('home').then(data => {
-      console.log('DATA', data)
+    getSection('home').then(data => {
       setArticles(data.results)
     })
   }, [])
