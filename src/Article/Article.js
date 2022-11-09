@@ -1,12 +1,22 @@
 import React from 'react';
-import '../Article/Article';
+import ArticleCard from '../ArticleCard/ArticleCard';
+import './Article';
 
-const Article = ({ articles }) => {
+const Articles = ({ articles }) => {
+    // console.log('ARTICLES', articles)
+    const showArticle = articles.map(article => {
+        return (
+            <ArticleCard
+            title={article.title}
+            />
+        )
+    })
+
     return (
         <div>
-            Article goes here!
+            {showArticle}
         </div>
     )
 }
 
-export default Article;
+export default Articles;

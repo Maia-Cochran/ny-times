@@ -18,7 +18,6 @@ function App() {
     <div className="App">
       <SearchForm setArticles={setArticles} />
       <Article articles={articles} />
-      App renders here.
     </div>
   );
 }
