@@ -1,6 +1,6 @@
 import '../App/App.css';
 import React, { useEffect, useState } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Link } from 'react-router-dom';
 import { getSection } from '../../apiCalls';
 import SearchForm from '../SearchForm/SearchForm';
 import ArticleCards from '../ArticleCards/ArticleCards';
@@ -29,6 +29,12 @@ function App() {
         <Route path='/article/:title' element={
           <>
             <ArticleDetails articles={articles} />
+          </>
+        } />
+        <Route path='/:other' element={
+          <>
+            <h2> Oops! Nothing to see here! 🙈</h2>
+            <Link to={'/'}> Please return to article search page </Link>
           </>
         } />
       </Routes>
