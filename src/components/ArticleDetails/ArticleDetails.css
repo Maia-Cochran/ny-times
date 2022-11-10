@@ -2,3 +2,7 @@
     height: 9em;
     width: 27em;
 }
+
+.title {
+    font-weight: bolder;
+}
