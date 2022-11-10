@@ -2,6 +2,7 @@
 
 ## Table of Contents
   - [Overview](#overview)
+  - [Learning Goals](#learning-goals)
   - [Technologies](#technologies)
   - [Contributors](#contributors)
   - [Deployed Webpage](#deployed-page)
@@ -13,7 +14,14 @@
   - [Set Up](#set-up)
 
 ## Overview
-A news reader application built in React that pulls articles from the [New York Times API Top Stories API](https://developer.nytimes.com/docs/top-stories-product/1/overview).
+A minimalist news reader app built in React that displays articles from the [New York Times API Top Stories API](https://developer.nytimes.com/docs/top-stories-product/1/overview).
+
+## Learning Goals
+Instructions for this solo challenge include creating a React application that allows users to see a list of articles and a “detailed” view for each article in 8 hours. The goal of this project was to demonstrate the understanding of:
+
+- React fundamentals
+- Create multi page UX using React Router
+- Frontend best practices
 
 ## Technologies
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
