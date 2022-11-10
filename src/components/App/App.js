@@ -1,7 +1,7 @@
 import '../App/App.css';
 import React, { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { getSection } from '../apiCalls';
+import { getSection } from '../../apiCalls';
 import SearchForm from '../SearchForm/SearchForm';
 import ArticleCards from '../ArticleCards/ArticleCards';
 import ArticleDetails from '../ArticleDetails/ArticleDetails';
