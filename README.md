@@ -31,7 +31,7 @@ A news reader application built in React that pulls articles from the [New York 
 You can view the deployed webpage [here](https://ny-times-lac.vercel.app/)!
 
 ## Demo
-
+Demo will be added here. 
 
 ## Planning
 You can view the wireframe for this project [here](https://www.figma.com/file/cDBE6ObXoTOLudLYS6Yfpv/NY-Times?node-id=0%3A1)!
