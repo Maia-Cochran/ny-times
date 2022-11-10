@@ -13,13 +13,13 @@ const ArticleDetails = ({ articles }) => {
   return (
     <div>
       <p>{findArticle.title}</p>
-      <p>{(findArticle.byline)}</p>
-      <p>"{findArticle.abstract}"</p>
+      <p>{findArticle.byline}</p>
+      {findArticle.abstract !== '' && <p>"{findArticle.abstract}"</p>}
       <img src={findArticle.multimedia[1].url} alt={findArticle.title}/>
-      <p>Published: {publishDate}</p>
-      <p>Updated: {editDate}</p>
-      <p>Topic: {(findArticle.section).toUpperCase()}</p>
-      <p>SubTopic: {(findArticle.subsection).toUpperCase()}</p>
+      {publishDate !== '' && <p>Published: {publishDate}</p>}
+      {editDate !== '' && <p>Updated: {editDate}</p>}
+      {findArticle.section !== '' && <p>Topic: {(findArticle.section).toUpperCase()}</p>}
+      {findArticle.subsection !== '' && <p>SubTopic: {(findArticle.subsection).toUpperCase()}</p>}
       <a href={findArticle.url}>See Full Article</a>
       <p><button onClick={() => navigate('/')}>Return to home page</button></p>
     </div>
