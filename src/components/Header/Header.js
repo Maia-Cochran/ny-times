@@ -6,7 +6,7 @@ const Header = () => {
     const navigate = useNavigate();
     return (
         <div className="header">
-            <button className='home-page' onClick={() => navigate('/')}><h1>New York Times</h1></button>
+            <button className='logo-tile' onClick={() => navigate('/')}><h1>NY Times News Reader</h1></button>
         </div>
     )
 }
