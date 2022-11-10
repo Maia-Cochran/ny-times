@@ -1,4 +1,4 @@
-export const Sections = [
+const Sections = [
     "arts", 
     "books",
     "business", 
@@ -25,3 +25,5 @@ export const Sections = [
     "us", 
     "world"
 ];
+
+export default Sections;
