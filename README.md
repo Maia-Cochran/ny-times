@@ -52,10 +52,9 @@ You can view the wireframe for this project [here](https://www.figma.com/file/cD
 6. Go to http://localhost:3000/ to view the site.
 
 ## Future Additions and Improvements
-- Generate custom phrases to translate into chef’s speak
-- Build audio-reader for the translated quote so user can hear it
-- List the date that the quote was generated
-- Star my favorite quotes and categorize by date
+- Sort by date of article
+- Star my favorite articles
+- Light and dark modes
 
 ## Project Spec
 Click [here](https://mod4.turing.edu/projects/take_home/take_home_fe) for project specs, provided by [Turing School of Software and Design](https://turing.edu/).
