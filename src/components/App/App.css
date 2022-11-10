@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  margin: 0.7em;
 }
 .header {
   display: flex;
@@ -10,4 +11,5 @@
   border: 1px solid black;
   padding: 1em;
   border-radius: .2em;
+  margin: 0.2em;
 }

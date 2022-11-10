@@ -1,4 +1,5 @@
 .search-form {
+    justify-content: center;
     height: 2em;
     width: 14em;
     margin: 1em;
@@ -16,4 +17,5 @@ form {
     align-items: center;
     align-self: center;
     border-radius: 2em;
+    margin: 0.7em;
 }
