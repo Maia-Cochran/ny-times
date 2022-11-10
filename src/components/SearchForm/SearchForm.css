@@ -1,7 +1,16 @@
 .search-form {
-    height: 4em;
-    width: 16em;
+    height: 2em;
+    width: 14em;
+    margin: 1em;
     font-size: xx-large;
     text-align: center;
-    padding: .2em;
+    border: black solid 1px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
 }
