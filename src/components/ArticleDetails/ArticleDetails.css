@@ -6,3 +6,9 @@
 .title {
     font-weight: bolder;
 }
+
+.details-container {
+    background-color: blanchedalmond;
+    padding: 1em;
+    border-radius: 2em;
+}

@@ -5,6 +5,8 @@
     font-size: xx-large;
     text-align: center;
     border: black solid 1px;
+    background-color: blanchedalmond;
+    border-radius: .5em;
 }
 
 form {
@@ -13,4 +15,5 @@ form {
     justify-content: center;
     align-items: center;
     align-self: center;
+    border-radius: 2em;
 }

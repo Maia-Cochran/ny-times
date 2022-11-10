@@ -11,7 +11,7 @@ const ArticleDetails = ({ articles }) => {
   const editDate = new Date(findArticle.updated_date).toLocaleString('en-US', {dateStyle: 'medium', timeStyle: 'short'})
 
   return (
-    <div>
+    <div className='details-container'>
       <p className='title'>{findArticle.title}</p>
       <p>{findArticle.byline}</p>
       {findArticle.abstract !== '' && <p>"{findArticle.abstract}"</p>}
