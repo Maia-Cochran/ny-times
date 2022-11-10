@@ -1,5 +1,5 @@
 const getSection = (section) => {
-    return fetch(`https://api.nytimes.com/svc/topstories/v2/${section}.json?api-key=2g0IGFodDXgFfkdSuJ6VAqTUWjPEm2J0`)
+    return fetch(`https://api.nytimes.com/svc/topstories/v2/${section}.json?api-key=${process.env.REACT_APP_API_KEY}`)
     .then(res => res.json())
 }
 
