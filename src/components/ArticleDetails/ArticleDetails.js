@@ -12,7 +12,7 @@ const ArticleDetails = ({ articles }) => {
 
   return (
     <div>
-      <p>{findArticle.title}</p>
+      <p className='title'>{findArticle.title}</p>
       <p>{findArticle.byline}</p>
       {findArticle.abstract !== '' && <p>"{findArticle.abstract}"</p>}
       <img src={findArticle.multimedia[1].url} alt={findArticle.title}/>
