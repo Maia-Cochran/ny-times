@@ -1,7 +1,7 @@
 import React from 'react';
 import '../SearchForm/SearchForm.css';
 import Sections from '../../data';
-import { getSection } from '../../apiCalls'
+import { getSection } from '../../apiCalls';
 
 const SearchForm = ({ setArticles }) => {
     const listSections = Sections.map(section => {

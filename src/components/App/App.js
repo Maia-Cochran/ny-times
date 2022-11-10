@@ -5,7 +5,6 @@ import { getSection } from '../../apiCalls';
 import SearchForm from '../SearchForm/SearchForm';
 import ArticleCards from '../ArticleCards/ArticleCards';
 import ArticleDetails from '../ArticleDetails/ArticleDetails';
-import Header from '../Header/Header';
 
 function App() {
   const [articles, setArticles] = useState([])
@@ -19,7 +18,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
+      <h1 className='header'>NY Times News Reader</h1>
       <Routes>
         <Route path='/' element={
           <>
