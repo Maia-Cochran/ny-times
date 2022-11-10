@@ -1,90 +1,140 @@
+const articlesStub = {
+  results: [
+    {
+      section: "movies",
+      subsection: "",
+      title: "‘The Fabelmans’ Review: Spielberg’s Own Sentimental Education",
+      abstract: "The director’s latest movie focuses on a budding filmmaker a lot like himself. But Michelle Williams, as his mother, is the soul of this fractious family drama.",
+      url: "https://www.nytimes.com/2022/11/10/movies/the-fabelmans-review-spielberg.html",
+      byline: "By Manohla Dargis",
+      updated_date: "2022-11-10T12:51:27-05:00",
+      published_date: "2022-11-10T09:47:35-05:00",
+      multimedia: [
+        {
+          url: 'https://static01.nyt.com/images/2022/11/11/arts/11…bceb56-f202-44dc-9ca1-9a54a58bbfe0-superJumbo.jpg'
+        },
+        {
+          url: 'https://static01.nyt.com/images/2022/11/11/arts/11…02-44dc-9ca1-9a54a58bbfe0-threeByTwoSmallAt2X.jpg'
+        },
+        {
+          url: 'https://static01.nyt.com/images/2022/11/11/arts/11…bceb56-f202-44dc-9ca1-9a54a58bbfe0-thumbLarge.jpg'
+        },
+      ],
+    },
+    {
+      section: "arts",
+      subsection: "television",
+      title: "In ‘Tulsa King,’ Sylvester Stallone Tries Something New: Being Himself",
+      abstract: "His best-known characters often speak in grunts. But in a new series from Taylor Sheridan, he plays a smooth talker written with his real personality in mind.",
+      url: "https://www.nytimes.com/2022/11/10/arts/television/tulsa-king-sylvester-stallone.html",
+      byline: "By Austin Considine",
+      updated_date: "2022-11-10T12:19:31-05:00",
+      published_date: "2022-11-10T05:00:15-05:00",
+      multimedia: [
+        {
+          url: 'https://static01.nyt.com/images/2022/11/13/arts/13…6173e9-1afd-4ba7-b0bd-a9fa13c2b5d6-superJumbo.jpg'
+        },
+        {
+          url: 'https://static01.nyt.com/images/2022/11/13/arts/13stallone4/13stallone4-threeByTwoSmallAt2X.jpg'
+        },
+        {
+          url: 'https://static01.nyt.com/images/2022/11/13/arts/13stallone4/13stallone4-thumbLarge.jpg'
+        },
+      ],
+    },
+    {
+      section: "arts",
+      subsection: "television",
+      title: "This Land Is His Land",
+      abstract: "It’s too simplistic to label “Yellowstone” a “red-state drama.” But the cowboy soap speaks the language of culture war with a perfect accent.",
+      url: "https://www.nytimes.com/2022/11/10/arts/television/yellowstone-taylor-sheridan.html",
+      byline: "By James Poniewozik",
+      updated_date: "2022-11-10T05:02:38-05:00",
+      published_date: "2022-11-09T13:58:51-05:00",
+      multimedia: [
+        {
+          url: 'https://static01.nyt.com/images/2022/11/13/arts/13…ne-notebook/13yellowstone-notebook-superJumbo.jpg',
+        },
+        {
+          url: 'https://static01.nyt.com/images/2022/11/13/arts/13…ok/13yellowstone-notebook-threeByTwoSmallAt2X.jpg',
+        },
+        {
+          url: 'https://static01.nyt.com/images/2022/11/13/arts/13…ne-notebook/13yellowstone-notebook-thumbLarge.jpg',
+        },
+      ],
+    },
+  ]
+};
+
+const artsStub = {
+  results: [{
+    section: "arts",
+    subsection: "television",
+    title: "In ‘Tulsa King,’ Sylvester Stallone Tries Something New: Being Himself",
+    abstract: "His best-known characters often speak in grunts. But in a new series from Taylor Sheridan, he plays a smooth talker written with his real personality in mind.",
+    url: "https://www.nytimes.com/2022/11/10/arts/television/tulsa-king-sylvester-stallone.html",
+    byline: "By Austin Considine",
+    updated_date: "2022-11-10T12:19:31-05:00",
+    published_date: "2022-11-10T05:00:15-05:00",
+    multimedia: [
+      {
+        url: 'https://static01.nyt.com/images/2022/11/13/arts/13…6173e9-1afd-4ba7-b0bd-a9fa13c2b5d6-superJumbo.jpg'
+      },
+      {
+        url: 'https://static01.nyt.com/images/2022/11/13/arts/13stallone4/13stallone4-threeByTwoSmallAt2X.jpg'
+      },
+      {
+        url: 'https://static01.nyt.com/images/2022/11/13/arts/13stallone4/13stallone4-thumbLarge.jpg'
+      },
+    ],
+  },
+  {
+    section: "arts",
+    subsection: "television",
+    title: "This Land Is His Land",
+    abstract: "It’s too simplistic to label “Yellowstone” a “red-state drama.” But the cowboy soap speaks the language of culture war with a perfect accent.",
+    url: "https://www.nytimes.com/2022/11/10/arts/television/yellowstone-taylor-sheridan.html",
+    byline: "By James Poniewozik",
+    updated_date: "2022-11-10T05:02:38-05:00",
+    published_date: "2022-11-09T13:58:51-05:00",
+    multimedia: [
+      {
+        url: 'https://static01.nyt.com/images/2022/11/13/arts/13…ne-notebook/13yellowstone-notebook-superJumbo.jpg',
+      },
+      {
+        url: 'https://static01.nyt.com/images/2022/11/13/arts/13…ok/13yellowstone-notebook-threeByTwoSmallAt2X.jpg',
+      },
+      {
+        url: 'https://static01.nyt.com/images/2022/11/13/arts/13…ne-notebook/13yellowstone-notebook-thumbLarge.jpg',
+      },
+    ],
+  },
+  ],
+};
+
 describe('App', () => {
   beforeEach(() => {
-    cy.intercept("GET", `https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${process.env.REACT_APP_API_KEY}`)
-    // cy.intercept("POST", 'http://localhost:3001/api/v1/orders/', { fixture: "newOrder.json"})
+    cy.intercept("GET", `https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${process.env.REACT_APP_API_KEY}`, articlesStub)
     cy.visit('http://localhost:3000/')
   });
 
-  it('user should see home section articles on pageload', () => {
+  it('user should see a header, dropdown menu, and home section articles on pageload', () => {
     cy.get('.App').within(() => {
-      cy.get('.header').within(() => {
-      })
+      cy.get('.header').contains('NY Times News Reader')
       cy.get('form').within(() => {
+        cy.get('.search-form').should('exist')
       })
-      cy.get('.article-cards-container > :nth-child(1)')
+      cy.get('.article-cards-container > :nth-child(1)').should('exist')
+      cy.get('.article-cards-container > :nth-child(38)').should('exist')
     })
+    cy.wait(1000)
   });
+  // it('user should be able to choose a different section of articles to view', () => {
+  //   cy.intercept("GET", `https://api.nytimes.com/svc/topstories/v2/arts.json?api-key=${process.env.REACT_APP_API_KEY}`)
+  //   cy.visit('http://localhost:3000')
+  //   cy.get('select').first().select('arts')
+  //   cy.get('.article-card-container > :nth-child(1) > :nth-child(1)').should('contain', '‘The Fabelmans’ Review: Steven Spielberg Phones Home')
+  //   cy.wait(1000)
 
-  // it('if the database is not connected, user should see an error message', () => {
-  //     cy.intercept("GET", 'http://localhost:3001/api/v1/orders/', { fixture: "noOrdersError.json" })
-  //     cy.visit('http://localhost:3000')
-  //     cy.get('.order-list').should("contain", "No orders yet!")
-  //   })
-  //   it('if the database is not connected, user should see an error message', () => {
-  //     cy.intercept("GET", 'http://localhost:3001/api/v1/orders/', { fixture: "noOrdersError.json" })
-  //     cy.visit('http://localhost:3000')
-  //     cy.get('.order-list').should("contain", "No orders yet!")
-  //   })
-  //   it('user should see prepopulated orders on the page', () => {
-  //     cy.get('.App').within(() => {
-  //       cy.get('.order-list > :nth-child(1)').should('have.length', '1')
-  //       cy.get('.order-list > :nth-child(2)').should('have.length', '1')
-  //       cy.get('.order-list > :nth-child(3)').should("have.length", '1')
-  //     })
-  //   })
-  //   it('user should see a form for adding new orders to the list', () => {
-  //     cy.get('form').within(() => {
-  //       cy.get('input')}).should('exist')
-  //   })
-  //   it('user should be able to input a name and choose ingredients to create a new order', () => {
-  //     cy.get('input').first().type('Randy').should('have.attr', 'value', 'Randy')
-  //     cy.get('button.ingredient-choice').first().click()
-  //     cy.get('header p').first().should('contain', 'Order: beans')
-  //   })
-  //   it('user should be able to click more than one ingredient to add to their order', () => {
-  //     cy.get('button.ingredient-choice').first().click().next().next().next().next().next().next().next().next().click().next().click()
-  //     cy.wait(1000)
-  //     cy.get('header p').first().should('contain', 'Order: beans, guacamole, jalapenos')
-  //   })
-
-  //   it('user should be able to click the submit button and add an order', () => {
-  //     cy.get('input').first().type('Randy')
-  //     cy.get('button.ingredient-choice').first().click().next().next().next().next().next().next().next().next().click().next().click()
-  //     cy.wait(1000)
-  //     cy.get('button.submit-button').click()
-  //     cy.wait(1000)
-  //     cy.get('.App').within(() => {
-  //       cy.get('.order-list > :nth-child(1)').should('have.length', '1')
-  //       cy.get('.order-list > :nth-child(2)').should('have.length', '1')
-  //       cy.get('.order-list > :nth-child(3)').should('have.length', '1')
-  //       cy.get('.order-list > :nth-child(4)').should('have.length', '1')
-  //       .last().should('contain', 'Randy')
-  //       .and('contain', 'beans')
-  //       .and('contain', 'guacamole')
-  //       .and('contain', 'jalapenos')
-  //     })
-  //   })
-  //   it('user should be not be able to add an order without ingredients chosen', () => {
-  //     cy.get('input').first().type('Maia')
-  //     cy.get('button.submit-button').click()
-  //     cy.wait(1000)
-  //     cy.get('.App').within(() => {
-  //       cy.get('.order-list > :nth-child(1)').should('have.length', '1')
-  //       cy.get('.order-list > :nth-child(2)').should('have.length', '1')
-  //       cy.get('.order-list > :nth-child(3)').should('have.length', '1')
-  //       cy.get('.order-list > :nth-child(4)').should('not.exist')
-  //     })
-  //   })
-  //   it('user should not be able to add an order without a name entered', () => {
-  //     cy.get('button.ingredient-choice').first().click().next().next().next().next().next().next().next().next().click().next().click()
-  //     cy.wait(1000)
-  //     cy.get('button.submit-button').click()
-  //     cy.wait(1000)
-  //     cy.get('.App').within(() => {
-  //       cy.get('.order-list > :nth-child(1)').should('have.length', '1')
-  //       cy.get('.order-list > :nth-child(2)').should('have.length', '1')
-  //       cy.get('.order-list > :nth-child(3)').should('have.length', '1')
-  //       cy.get('.order-list > :nth-child(4)').should('not.exist')
-  //     })
   // })
 });
