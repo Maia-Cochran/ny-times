@@ -8,9 +8,9 @@ const ArticleCards = ({ articles }) => {
         if(article.title !== '' && article.byline !== '') {
             output = (
                 <div key={index} className='article-card'>
-                    <p>{article.title}</p>
-                    <p>{article.byline}</p>           
-                    <Link to={`/article/${article.title}`} state={article}>Click to view more!</Link>
+                    <div className='article-title'>{article.title}</div>
+                    <div className='article-byline'>{article.byline}</div>           
+                    <Link className='view-more-link' to={`/article/${article.title}`} state={article}>Click to view more!</Link>
                 </div>
             )
         }
