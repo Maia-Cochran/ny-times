@@ -13,15 +13,15 @@ const ArticleDetails = ({ articles }) => {
   return (
     <div className='details-container'>
       <p className='title'>{findArticle.title}</p>
-      <p>{findArticle.byline}</p>
-      {findArticle.abstract !== '' && <p>"{findArticle.abstract}"</p>}
-      <img src={findArticle.multimedia[1].url} alt={findArticle.title}/>
-      {publishDate !== '' && <p>Published: {publishDate}</p>}
-      {editDate !== '' && <p>Updated: {editDate}</p>}
-      {findArticle.section !== '' && <p>Topic: {(findArticle.section).toUpperCase()}</p>}
-      {findArticle.subsection !== '' && <p>SubTopic: {(findArticle.subsection).toUpperCase()}</p>}
-      <a href={findArticle.url}>See Full Article</a>
-      <p><button onClick={() => navigate('/')}>Return to home page</button></p>
+      <p className='byline'>{findArticle.byline}</p>
+      {findArticle.abstract !== '' && <p className='abstract'>"{findArticle.abstract}"</p>}
+      <img className='photo' src={findArticle.multimedia[1].url} alt={findArticle.title}/>
+      {publishDate !== '' && <p className='publish-date'>Published: {publishDate}</p>}
+      {editDate !== '' && <p className='edit-date'>Updated: {editDate}</p>}
+      {findArticle.section !== '' && <p className='topic'>Topic: {(findArticle.section).toUpperCase()}</p>}
+      {findArticle.subsection !== '' && <p className='sub-topic'>SubTopic: {(findArticle.subsection).toUpperCase()}</p>}
+      <a className='full-article' href={findArticle.url}>See Full Article</a>
+      <p className='return-home'><button onClick={() => navigate('/')}>Return to home page</button></p>
     </div>
   )
 }
