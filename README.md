@@ -7,8 +7,8 @@
   - [Contributors](#contributors)
   - [Deployed Webpage](#deployed-page)
   - [Demo](#demo)
-  - [Planning](planning)
-  - [Illustrations](#illustrations)
+  - [Accessibility](#accessibility)
+  - [Planning](#planning)
   - [Future Additions and Improvements](#future-additions-and-improvements)
   - [Project Spec](#project-spec)
   - [Set Up](#set-up)
@@ -39,7 +39,31 @@ Instructions for this solo challenge include creating a React application that a
 You can view the deployed webpage [here](https://ny-times-lac.vercel.app/)!
 
 ## Demo
-Demo will be added here. 
+Demo is shown in multiple views, as to display responsiveness across devices.
+
+### Desktop View
+
+https://user-images.githubusercontent.com/101746747/201239440-c4ea2f5f-d14b-45d8-9f43-052e469dcaa3.mov
+
+
+
+### Tablet View
+
+https://user-images.githubusercontent.com/101746747/201239702-15d837bb-962e-4f08-96b8-b1e51a520549.mov
+
+
+### Mobile View
+
+https://user-images.githubusercontent.com/101746747/201243011-a03b68ce-33ad-44f2-87da-cdc8f2b28cb0.mov
+
+
+
+
+## Accessibility
+LightHouse was used to measure the accessibility of this app, as well as evaluate best practices.
+
+![Screenshot 2022-11-10 at 6 37 04 PM](https://user-images.githubusercontent.com/101746747/201243190-e919eb66-6cb9-4468-9f21-ad45b4a3fa71.png)
+
 
 ## Planning
 You can view the wireframe for this project [here](https://www.figma.com/file/cDBE6ObXoTOLudLYS6Yfpv/NY-Times?node-id=0%3A1)!
@@ -55,6 +79,7 @@ You can view the wireframe for this project [here](https://www.figma.com/file/cD
 - Sort by date of article
 - Star my favorite articles
 - Light and dark modes
+- Graphics and styling for more impressive UI/UX Design
 
 ## Project Spec
 Click [here](https://mod4.turing.edu/projects/take_home/take_home_fe) for project specs, provided by [Turing School of Software and Design](https://turing.edu/).
