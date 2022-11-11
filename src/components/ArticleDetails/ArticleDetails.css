@@ -8,7 +8,19 @@
 }
 
 .details-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: blanchedalmond;
     padding: 1em;
     border-radius: 2em;
+    contain: content;
+}
+
+img {
+    padding: 1em;
+    height: 15em;
+    width: 20em;
+    margin: 0.2em;
 }
