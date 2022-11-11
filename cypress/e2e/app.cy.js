@@ -114,27 +114,33 @@ const artsStub = {
 
 describe('App', () => {
   beforeEach(() => {
-    cy.intercept("GET", `https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${process.env.REACT_APP_API_KEY}`, articlesStub)
+    cy.intercept("GET", `https://api.nytimes.com/svc/topstories/v2/${articlesStub.section}.json?api-key=${process.env.REACT_APP_API_KEY}`, articlesStub)
     cy.visit('http://localhost:3000/')
   });
 
   it('user should see a header, dropdown menu, and home section articles on pageload', () => {
     cy.get('.App').within(() => {
       cy.get('.header').contains('NY Times News Reader')
-      cy.get('form').within(() => {
-        cy.get('.search-form').should('exist')
-      })
-      cy.get('.article-cards-container > :nth-child(1)').should('exist')
-      cy.get('.article-cards-container > :nth-child(38)').should('exist')
+        .get('form').within(() => {
+          cy.get('.search-form').should('exist').and('be.visible')
+        })
+      cy.get('.article-cards-container > :nth-child(1)').should('exist').and('be.visible')
+      cy.get('.article-cards-container > :nth-child(38)').should('exist').and('be.visible')
     })
-    cy.wait(1000)
   });
-  // it('user should be able to choose a different section of articles to view', () => {
-  //   cy.intercept("GET", `https://api.nytimes.com/svc/topstories/v2/arts.json?api-key=${process.env.REACT_APP_API_KEY}`)
-  //   cy.visit('http://localhost:3000')
-  //   cy.get('select').first().select('arts')
-  //   cy.get('.article-card-container > :nth-child(1) > :nth-child(1)').should('contain', '‘The Fabelmans’ Review: Steven Spielberg Phones Home')
-  //   cy.wait(1000)
 
-  // })
+  it('user should see a list of articles, each with a title, byline, and link to view more', () => {
+    cy.get('.article-cards-container > :nth-child(1) > .article-title').should('be.visible')
+      .get('.article-byline').contains('By Manohla Dargis')
+      .get('.view-more-link').should('be.visible')
+  })
+
+  it('user should be able to choose a different section of articles to view', () => {
+    cy.intercept("GET", `https://api.nytimes.com/svc/topstories/v2/arts.json?api-key=${process.env.REACT_APP_API_KEY}`, artsStub)
+    cy.visit('http://localhost:3000')
+    cy.get('select').first().select('arts')
+    cy.get('.article-cards-container > :nth-child(1) > .article-title').should('be.visible')
+      .get('.article-byline').contains('By Austin Considine')
+      .get('.view-more-link').should('be.visible')
+  })
 });
