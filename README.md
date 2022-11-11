@@ -55,7 +55,6 @@ You can view the wireframe for this project [here](https://www.figma.com/file/cD
 - Sort by date of article
 - Star my favorite articles
 - Light and dark modes
-- Cypress testing for user stories
 
 ## Project Spec
 Click [here](https://mod4.turing.edu/projects/take_home/take_home_fe) for project specs, provided by [Turing School of Software and Design](https://turing.edu/).
