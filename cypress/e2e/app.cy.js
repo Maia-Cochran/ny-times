@@ -133,8 +133,33 @@ describe('App', () => {
     cy.get('.article-cards-container > :nth-child(1) > .article-title').should('be.visible')
       .get('.article-byline').contains('By Manohla Dargis')
       .get('.view-more-link').should('be.visible')
-  })
+  });
 
+  
+  it('should be able to click on the Click To View More button to navigate to a page that displays the details for that article', () => {
+    cy.get('.view-more-link').first().click()
+    .get('.details-container').should('be.visible')
+  });
+  
+  it('should be able to see the details of the story, including the title, author, published date, topic, abstract, photo, link to the full article on the NY times website, and a button to return to the home page', () => {
+    cy.get('.view-more-link').first().click()
+    .get('.details-container').should('be.visible')
+    .get('.title').contains('‘The Fabelmans’ Review: Steven Spielberg Phones Home')
+    .get('.byline').contains('By Manohla Dargis')
+    .get('.abstract').contains("The director’s latest movie focuses on a budding filmmaker a lot like himself. But Michelle Williams, as his mother, is the soul of this fractious family drama.")
+    .get('.photo').should('be.visible')
+    .get('.publish-date').first().contains('Published: Nov 10, 2022, 7:47 AM')
+    .get('.topic').contains('MOVIES')
+    .get('.full-article').contains('See Full Article')
+    .get('.return-home').should('be.visible')
+  });
+  
+  it('should be able to navigate back to the home page', () => {
+    cy.get('.view-more-link').first().click()
+    .get('.return-home').click()
+    .get('.article-cards-container').should('be.visible')
+  });
+  
   it('user should be able to choose a different section of articles to view', () => {
     cy.intercept("GET", `https://api.nytimes.com/svc/topstories/v2/arts.json?api-key=${process.env.REACT_APP_API_KEY}`, artsStub)
     cy.visit('http://localhost:3000')
@@ -142,5 +167,7 @@ describe('App', () => {
     cy.get('.article-cards-container > :nth-child(1) > .article-title').should('be.visible')
       .get('.article-byline').contains('By Austin Considine')
       .get('.view-more-link').should('be.visible')
-  })
+  });
+
+
 });
